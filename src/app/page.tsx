@@ -16,11 +16,11 @@ export default function Home() {
   );
 }
 
-function Container({ children }: any) {
+function Container({ children }: { children: React.ReactNode }) {
   return <div className="bg-bg-200 h-full w-full p-4">{children}</div>;
 }
 
-function CardContainer({ children }: any) {
+function CardContainer({ children }: { children: React.ReactNode }) {
   return (
     <div className="w-full flex justify-center items-center">
       <div className="overflow-hidden rounded-lg bg-white shadow w-auto">

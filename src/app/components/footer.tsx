@@ -1,10 +1,15 @@
+import React from "react";
 import Link from "next/link";
 
-const navigation = [
+const navigation: {
+  name: string;
+  href: string;
+  icon: (props: React.SVGProps<SVGSVGElement>) => React.ReactNode;
+}[] = [
   {
     name: "Facebook",
     href: "#",
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"
@@ -17,7 +22,7 @@ const navigation = [
   {
     name: "Instagram",
     href: "#",
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"
@@ -30,7 +35,7 @@ const navigation = [
   {
     name: "GitHub",
     href: "#",
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"
@@ -43,7 +48,7 @@ const navigation = [
   {
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/shivi-mittal-nitkkr/",
-    icon: (props: any) => (
+    icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
         <path
           fillRule="evenodd"

@@ -27,7 +27,7 @@ function Left() {
             Shivi Mittal{" "}
           </span>
           a Senior frontend Engineer, holding more than 6 years of experience of
-          working with MNC's, early stage startups and fast growing unicorns. My
+          working with MNCs, early stage startups and fast growing unicorns. My
           expertise lies into JS, HTML, CSS, TypeScript, Tailwind, React.js,
           Next.js, angular, and poking nose into everything Frontend. If you are
           looking for someone who can help you with your frontend needs, you are

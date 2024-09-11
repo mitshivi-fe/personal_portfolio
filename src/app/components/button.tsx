@@ -1,4 +1,11 @@
-const Button = ({ className, children, ...props }: any) => {
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
+
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string;
+  children: ReactNode;
+}
+
+const Button = ({ className, children, ...props }: ButtonProps) => {
   return (
     <button
       {...props}
