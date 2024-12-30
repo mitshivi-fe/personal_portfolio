@@ -35,7 +35,7 @@ function Left() {
         </p>
       </div>
       <Button>
-        <Link href="/shivi_resume_nitkkr.pdf" download="cv">
+        <Link href="/Shivi_FE_NITkkr.pdf" download="cv">
           {" "}
           Know more about me!{" "}
         </Link>
