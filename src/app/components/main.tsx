@@ -13,7 +13,7 @@ function Main() {
     </>
   );
 }
-
+// this is the left section
 function Left() {
   return (
     <div className="lg:w-1/2">
