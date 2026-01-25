@@ -4,7 +4,11 @@
       "Bash(npm run lint)",
       "Bash(npm run build:*)",
       "Bash(npm ls:*)",
-      "mcp__playwright"
+      "mcp__playwright",
+      "Bash(git add:*)",
+      "Bash(npm run test:run:*)",
+      "Bash(npm run type-check:*)",
+      "Bash(npm install:*)"
     ]
   }
 }
