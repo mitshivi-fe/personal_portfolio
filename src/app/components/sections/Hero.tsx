@@ -1,67 +1,74 @@
 import Image from "next/image";
-import Link from "next/link";
+import Button from "../Button";
+import Container from "../Container";
 
 export default function Hero() {
   return (
-    <section className="py-12 lg:py-20">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 lg:py-20 bg-white dark:bg-zinc-900">
+      <Container>
         <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-text-100 mb-4">
+            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-zinc-900 dark:text-zinc-100 mb-4 tracking-tight">
               Hi, I&apos;m{" "}
-              <span className="text-primary-100">Shivi Mittal</span>
+              <span className="text-teal-500">Shivi Mittal</span>
             </h1>
-            <p className="text-xl lg:text-2xl text-primary-200 font-medium mb-4">
+            <p className="text-xl lg:text-2xl text-teal-600 dark:text-teal-400 font-medium mb-4">
               Senior Frontend Engineer
             </p>
-            <p className="text-lg text-text-200 mb-6 max-w-xl mx-auto lg:mx-0">
+            <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 max-w-xl mx-auto lg:mx-0">
               Building high-performance web experiences for{" "}
-              <span className="font-semibold text-primary-100">14M+ users</span>
+              <span className="font-semibold text-teal-500">14M+ users</span>
             </p>
 
             {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8 text-sm text-text-200">
-              <span className="px-3 py-1 bg-bg-200 rounded-full">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 text-sm">
+              <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
                 6+ Years Experience
               </span>
-              <span className="px-3 py-1 bg-bg-200 rounded-full">MNCs</span>
-              <span className="px-3 py-1 bg-bg-200 rounded-full">Startups</span>
-              <span className="px-3 py-1 bg-bg-200 rounded-full">Unicorns</span>
+              <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
+                MNCs
+              </span>
+              <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
+                Startups
+              </span>
+              <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
+                Unicorns
+              </span>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link
-                href="#contact"
-                className="bg-primary-100 text-white px-6 py-3 rounded-lg font-medium hover:bg-primary-200 transition-colors text-center"
-              >
+              <Button href="#contact" variant="primary">
                 Let&apos;s Connect
-              </Link>
-              <Link
+              </Button>
+              <Button
                 href="/Shivi_FE_NITkkr.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border-2 border-primary-100 text-primary-100 px-6 py-3 rounded-lg font-medium hover:bg-primary-100 hover:text-white transition-colors text-center"
+                variant="outline"
               >
                 Download Resume
-              </Link>
+              </Button>
             </div>
           </div>
 
           {/* Hero Image */}
           <div className="flex-1 flex justify-center">
-            <Image
-              src="/images/hero_Image.webp"
-              alt="Shivi Mittal - Senior Frontend Engineer"
-              width={450}
-              height={450}
-              className="rounded-2xl shadow-lg"
-              priority
-            />
+            <div className="relative">
+              <Image
+                src="/images/hero_Image.webp"
+                alt="Shivi Mittal - Senior Frontend Engineer"
+                width={450}
+                height={450}
+                className="rounded-2xl shadow-xl ring-1 ring-zinc-900/5 dark:ring-white/10"
+                priority
+              />
+              <div className="absolute -inset-1 -z-10 rounded-2xl bg-gradient-to-br from-teal-400/20 to-teal-600/20 blur-lg" />
+            </div>
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }
