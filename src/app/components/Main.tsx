@@ -34,7 +34,8 @@ function Left() {
       </div>
       <Link
         href="/Shivi_FE_NITkkr.pdf"
-        download="Shivi_Mittal_CV.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
         className="inline-block rounded-md bg-primary-100 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-primary-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-100"
       >
         Know more about me!

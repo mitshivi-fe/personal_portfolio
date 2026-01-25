@@ -3,7 +3,8 @@
     "allow": [
       "Bash(npm run lint)",
       "Bash(npm run build:*)",
-      "Bash(npm ls:*)"
+      "Bash(npm ls:*)",
+      "mcp__playwright"
     ]
   }
 }
