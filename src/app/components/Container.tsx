@@ -3,7 +3,7 @@ interface ContainerProps {
 }
 
 function Container({ children }: ContainerProps) {
-  return <div className="bg-bg-200 min-h-screen w-full p-4">{children}</div>;
+  return <div className="bg-bg-200 min-h-screen w-full p-4 flex flex-col">{children}</div>;
 }
 
 export default Container;
