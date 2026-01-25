@@ -1,31 +1,17 @@
-import Footer from "./components/footer";
+import CardContainer from "./components/CardContainer";
+import Container from "./components/Container";
+import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Main from "./components/main";
+import Main from "./components/Main";
 
 export default function Home() {
   return (
-    <>
-      <Container>
-        <Header />
-        <CardContainer>
-          <Main />
-        </CardContainer>
-        <Footer />
-      </Container>
-    </>
-  );
-}
-
-function Container({ children }: { children: React.ReactNode }) {
-  return <div className="bg-bg-200 h-full w-full p-4">{children}</div>;
-}
-
-function CardContainer({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="w-full flex justify-center items-center">
-      <div className="overflow-hidden rounded-lg bg-white shadow w-auto">
-        <div className="px-2 py-5 sm:p-4">{children}</div>
-      </div>
-    </div>
+    <Container>
+      <Header />
+      <CardContainer>
+        <Main />
+      </CardContainer>
+      <Footer />
+    </Container>
   );
 }
