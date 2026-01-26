@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import Button from "../Button";
 import Container from "../Container";
+import AnimatedNumber from "@/app/components/AnimatedNumber";
 
 export default function Hero() {
   return (
@@ -17,7 +20,9 @@ export default function Hero() {
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 max-w-xl mx-auto lg:mx-0">
               Building high-performance web experiences for{" "}
-              <span className="font-semibold text-teal-500">14M+ users</span>
+              <span className="font-semibold text-teal-500">
+                <AnimatedNumber value={14} suffix="M+ users" />
+              </span>
             </p>
 
             {/* Stats */}

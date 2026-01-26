@@ -1,3 +1,5 @@
+"use client";
+
 // src/app/components/Section.tsx
 import Container from "../Container";
 

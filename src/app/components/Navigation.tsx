@@ -2,7 +2,13 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Popover, PopoverButton, PopoverPanel, PopoverBackdrop, Transition } from "@headlessui/react";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  PopoverBackdrop,
+  Transition,
+} from "@headlessui/react";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
@@ -79,7 +85,7 @@ function MobileNavigation(props: React.HTMLAttributes<HTMLDivElement>) {
         <PopoverPanel
           focus
           transition
-          className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 dark:bg-zinc-900 dark:ring-zinc-800"
+          className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 dark:bg-zinc-900 dark:ring-zinc-800 h-screen"
         >
           {({ close }) => (
             <>
@@ -99,7 +105,11 @@ function MobileNavigation(props: React.HTMLAttributes<HTMLDivElement>) {
               <nav className="mt-6">
                 <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                   {navItems.map((item) => (
-                    <MobileNavItem key={item.href} href={item.href} close={() => close()}>
+                    <MobileNavItem
+                      key={item.href}
+                      href={item.href}
+                      close={() => close()}
+                    >
                       {item.label}
                     </MobileNavItem>
                   ))}
