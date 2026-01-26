@@ -24,12 +24,13 @@ function Left() {
           <span className="text-lg lg:text-2xl text-balance text-primary-200">
             Shivi Mittal{" "}
           </span>
-          a Senior frontend Engineer, holding more than 6 years of experience of
-          working with MNCs, early stage startups and fast growing unicorns. My
-          expertise lies into JS, HTML, CSS, TypeScript, Tailwind, React.js,
-          Next.js, angular, and poking nose into everything Frontend. If you are
-          looking for someone who can help you with your frontend needs, you are
-          at the right place be it mentorship, consulting, or just a chat.
+          a Senior Fullstack Engineer, holding more than 7 years of experience
+          of working with MNCs, early stage startups and fast growing unicorns.
+          My expertise lies into JS, HTML, CSS, TypeScript, Tailwind, React.js,
+          Next.js, angular, and poking nose into everything web related. If you
+          are looking for someone who can help you with your web development
+          needs, you are at the right place be it mentorship, consulting, or
+          just a chat.
         </p>
       </div>
       <Link
@@ -51,7 +52,7 @@ function Right() {
         src="/images/hero_Image.webp"
         height={500}
         width={500}
-        alt="Shivi Mittal - Senior Frontend Engineer"
+        alt="Shivi Mittal - Senior Fullstack Engineer"
         className="rounded-lg"
         priority
         sizes="(max-width: 1024px) 100vw, 50vw"

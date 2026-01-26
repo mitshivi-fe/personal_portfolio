@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Providers } from "./providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,11 +15,17 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Shivi Mittal | Senior Frontend Engineer",
+  title: "Shivi Mittal | Senior Software Engineer",
   description:
-    "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies. Available for mentorship, consulting, and collaboration.",
+    "Senior Software Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies. Available for mentorship, consulting, and collaboration.",
   keywords: [
     "Frontend Engineer",
+    "Fullstack Engineer",
+    "Senior Fullstack Engineer",
+    "Software Engineer",
+    "Senior Software Engineer",
+    "Senior Frontend Engineer",
+    "React.js",
     "React Developer",
     "Next.js",
     "TypeScript",
@@ -27,17 +34,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shivi Mittal" }],
   openGraph: {
-    title: "Shivi Mittal | Senior Frontend Engineer",
+    title: "Shivi Mittal | Senior Software Engineer",
     description:
-      "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
+      "Senior Software Engineer with 7+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivi Mittal | Senior Frontend Engineer",
+    title: "Shivi Mittal | Senior Software Engineer",
     description:
-      "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
+      "Senior Software Engineer with 7+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
   },
   robots: {
     index: true,
@@ -51,11 +58,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

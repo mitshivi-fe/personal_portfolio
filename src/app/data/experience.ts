@@ -13,7 +13,7 @@ export const experiences: Experience[] = [
   {
     id: "new-relic",
     company: "New Relic",
-    role: "Senior Frontend Engineer",
+    role: "Senior Software Engineer",
     startDate: "Oct 2024",
     endDate: "Present",
     location: "Bengaluru, Karnataka",
@@ -26,7 +26,7 @@ export const experiences: Experience[] = [
   {
     id: "coindcx",
     company: "CoinDCX",
-    role: "Senior Frontend Engineer",
+    role: "Senior Software Engineer",
     startDate: "Sep 2021",
     endDate: "Apr 2024",
     location: "Bengaluru, Karnataka",

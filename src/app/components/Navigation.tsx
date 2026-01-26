@@ -1,8 +1,15 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import {
+  Popover,
+  PopoverButton,
+  PopoverPanel,
+  PopoverBackdrop,
+  Transition,
+} from "@headlessui/react";
+import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
   { label: "About", href: "#about" },
@@ -12,172 +19,186 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-export default function Navigation() {
-  const [isOpen, setIsOpen] = useState(false);
-
-  // Prevent body scroll when menu is open
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [isOpen]);
-
+function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
-    <>
-      <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo/Name */}
-            <Link href="#" className="flex items-center gap-3 z-50">
-              <Image
-                src="/images/shi_thumbnail.jpg"
-                alt="Shivi Mittal"
-                width={40}
-                height={40}
-                className="rounded-full"
-              />
-              <span className="font-bold text-text-100 hidden sm:block">
-                Shivi Mittal
-              </span>
-            </Link>
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        d="m17.25 6.75-10.5 10.5M6.75 6.75l10.5 10.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-6">
-              {navItems.map((item) => (
+function ChevronDownIcon(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 8 6" aria-hidden="true" {...props}>
+      <path
+        d="M1.75 1.75 4 4.25l2.25-2.5"
+        fill="none"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function MobileNavItem({
+  href,
+  children,
+  close,
+}: {
+  href: string;
+  children: React.ReactNode;
+  close: () => void;
+}) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="block py-2 text-base text-zinc-800 dark:text-zinc-200 hover:text-teal-500 dark:hover:text-teal-400"
+        onClick={close}
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}
+
+function MobileNavigation(props: React.HTMLAttributes<HTMLDivElement>) {
+  return (
+    <Popover {...props}>
+      <PopoverButton className="group flex items-center rounded-full bg-white/90 px-4 py-2 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10 dark:hover:ring-white/20">
+        Menu
+        <ChevronDownIcon className="ml-3 h-auto w-2 stroke-zinc-500 group-hover:stroke-zinc-700 dark:group-hover:stroke-zinc-400" />
+      </PopoverButton>
+      <Transition>
+        <PopoverBackdrop
+          transition
+          className="fixed inset-0 z-50 bg-zinc-800/40 backdrop-blur-sm duration-150 data-closed:opacity-0 dark:bg-black/80"
+        />
+        <PopoverPanel
+          focus
+          transition
+          className="fixed inset-x-4 top-8 z-50 origin-top rounded-3xl bg-white p-8 ring-1 ring-zinc-900/5 duration-150 data-closed:scale-95 data-closed:opacity-0 dark:bg-zinc-900 dark:ring-zinc-800 h-screen"
+        >
+          {({ close }) => (
+            <>
+              <div className="flex flex-row-reverse items-center justify-between">
+                <button
+                  type="button"
+                  aria-label="Close menu"
+                  className="-m-1 p-1"
+                  onClick={() => close()}
+                >
+                  <CloseIcon className="h-6 w-6 text-zinc-500 dark:text-zinc-400" />
+                </button>
+                <h2 className="text-sm font-medium text-zinc-600 dark:text-zinc-400">
+                  Navigation
+                </h2>
+              </div>
+              <nav className="mt-6">
+                <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
+                  {navItems.map((item) => (
+                    <MobileNavItem
+                      key={item.href}
+                      href={item.href}
+                      close={() => close()}
+                    >
+                      {item.label}
+                    </MobileNavItem>
+                  ))}
+                </ul>
+              </nav>
+              <div className="mt-6 pt-6 border-t border-zinc-100 dark:border-zinc-100/5">
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className="text-text-200 hover:text-primary-100 transition-colors text-sm font-medium"
+                  href="/Shivi_FE_NITkkr.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => close()}
+                  className="inline-flex w-full justify-center rounded-md bg-teal-500 px-4 py-2 text-sm font-semibold text-white hover:bg-teal-600 dark:bg-teal-500 dark:hover:bg-teal-400"
                 >
-                  {item.label}
+                  Download Resume
                 </Link>
-              ))}
-              <Link
-                href="/Shivi_FE_NITkkr.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-primary-100 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-primary-200 transition-colors"
-              >
-                Resume
-              </Link>
-            </div>
+              </div>
+            </>
+          )}
+        </PopoverPanel>
+      </Transition>
+    </Popover>
+  );
+}
 
-            {/* Mobile Menu Button */}
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden p-2 text-text-200 hover:text-primary-100 z-50 relative"
-              aria-label="Toggle menu"
-            >
-              {isOpen ? (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="w-6 h-6"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
-      </nav>
+function NavItem({
+  href,
+  children,
+}: {
+  href: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <li>
+      <Link
+        href={href}
+        className="relative block px-3 py-2 text-zinc-600 transition hover:text-teal-500 dark:text-zinc-200 dark:hover:text-teal-400"
+      >
+        {children}
+      </Link>
+    </li>
+  );
+}
 
-      {/* Full Screen Mobile Navigation Overlay */}
-      {isOpen && (
-        <div className="fixed inset-0 z-40 md:hidden">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-white"
-            onClick={() => setIsOpen(false)}
+function DesktopNavigation(props: React.HTMLAttributes<HTMLElement>) {
+  return (
+    <nav {...props}>
+      <ul className="flex rounded-full bg-white/90 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/90 dark:text-zinc-200 dark:ring-white/10">
+        {navItems.map((item) => (
+          <NavItem key={item.href} href={item.href}>
+            {item.label}
+          </NavItem>
+        ))}
+      </ul>
+    </nav>
+  );
+}
+
+export default function Navigation() {
+  return (
+    <header className="sticky top-0 z-50 flex flex-none flex-wrap items-center justify-between bg-white/95 px-4 py-4 shadow-md shadow-zinc-800/5 backdrop-blur dark:bg-zinc-900/95 sm:px-6 lg:px-8">
+      <div className="flex flex-1 justify-start">
+        <Link href="#" className="flex items-center gap-3">
+          <Image
+            src="/images/shi_thumbnail.jpg"
+            alt="Shivi Mittal"
+            width={40}
+            height={40}
+            className="rounded-full ring-2 ring-white dark:ring-zinc-800"
           />
-
-          {/* Menu Content */}
-          <div className="relative flex flex-col items-center justify-center h-full px-6">
-            <div className="flex flex-col items-center gap-6">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-semibold text-text-100 hover:text-primary-100 transition-colors py-2"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <Link
-                href="/Shivi_FE_NITkkr.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setIsOpen(false)}
-                className="bg-primary-100 text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-primary-200 transition-colors mt-4"
-              >
-                Download Resume
-              </Link>
-            </div>
-
-            {/* Social Links at bottom */}
-            <div className="absolute bottom-12 flex gap-6">
-              <Link
-                href="https://www.linkedin.com/in/shivi-mittal-nitkkr/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-200 hover:text-primary-100 transition-colors"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M19 0H5a5 5 0 00-5 5v14a5 5 0 005 5h14a5 5 0 005-5V5a5 5 0 00-5-5zM8 19H5V8h3v11zM6.5 6.732c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zM20 19h-3v-5.604c0-3.368-4-3.113-4 0V19h-3V8h3v1.765c1.396-2.586 7-2.777 7 2.476V19z" />
-                </svg>
-              </Link>
-              <Link
-                href="https://github.com/shivimittal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-text-200 hover:text-primary-100 transition-colors"
-              >
-                <svg
-                  className="w-8 h-8"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
+          <span className="hidden font-semibold text-zinc-800 dark:text-zinc-100 sm:block">
+            Shivi Mittal
+          </span>
+        </Link>
+      </div>
+      <div className="flex flex-1 justify-center md:justify-center">
+        <MobileNavigation className="pointer-events-auto md:hidden" />
+        <DesktopNavigation className="pointer-events-auto hidden md:block" />
+      </div>
+      <div className="flex flex-1 justify-end gap-3">
+        <ThemeToggle />
+        <Link
+          href="/Shivi_FE_NITkkr.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden rounded-md bg-teal-500 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-teal-600 dark:bg-teal-500 dark:hover:bg-teal-400 md:inline-flex"
+        >
+          Resume
+        </Link>
+      </div>
+    </header>
   );
 }

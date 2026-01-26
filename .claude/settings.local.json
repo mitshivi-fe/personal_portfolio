@@ -8,7 +8,10 @@
       "Bash(git add:*)",
       "Bash(npm run test:run:*)",
       "Bash(npm run type-check:*)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(npm test:*)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout /t 5 /nobreak)"
     ]
   }
 }
