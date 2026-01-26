@@ -16,13 +16,13 @@ export default function About() {
               Professional Journey
             </h3>
             <p className="leading-relaxed text-zinc-600 dark:text-zinc-400">
-              I&apos;m a Senior Frontend Engineer with over 6 years of
+              I&apos;m a Senior Software Engineer with over 7 years of
               experience crafting scalable, high-performance web applications.
               I&apos;ve had the privilege of working with MNCs, early-stage
               startups, and fast-growing unicorns. Currently at{" "}
-              <span className="font-semibold text-teal-500">New Relic</span>,
-              I lead micro-frontend architecture initiatives. Previously, I
-              built trading platforms at{" "}
+              <span className="font-semibold text-teal-500">New Relic</span>, I
+              lead micro-frontend architecture initiatives. Previously, I built
+              trading platforms at{" "}
               <span className="font-semibold text-teal-500">CoinDCX</span>{" "}
               serving 14M+ users and contributed to a{" "}
               <span className="font-semibold text-teal-500">

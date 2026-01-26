@@ -31,29 +31,11 @@ export default function Footer() {
       <Container>
         <div className="flex flex-col items-center justify-between gap-6 py-8 sm:flex-row">
           <div className="flex gap-6">
-            <Link
-              href="https://github.com/shivimittal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group -m-1 p-1"
-              aria-label="Follow on GitHub"
-            >
-              <GitHubIcon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-zinc-400 dark:group-hover:fill-teal-400" />
-            </Link>
-            <Link
-              href="https://www.linkedin.com/in/shivi-mittal-nitkkr/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group -m-1 p-1"
-              aria-label="Follow on LinkedIn"
-            >
-              <LinkedInIcon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-teal-500 dark:fill-zinc-400 dark:group-hover:fill-teal-400" />
-            </Link>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400">
+              &copy; {new Date().getFullYear()} Shivi Mittal. Made with love in
+              India.
+            </p>
           </div>
-          <p className="text-sm text-zinc-500 dark:text-zinc-400">
-            &copy; {new Date().getFullYear()} Shivi Mittal. Made with love in
-            India.
-          </p>
         </div>
       </Container>
     </footer>

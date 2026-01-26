@@ -10,11 +10,10 @@ export default function Hero() {
           {/* Text Content */}
           <div className="flex-1 text-center lg:text-left">
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-zinc-900 dark:text-zinc-100 mb-4 tracking-tight">
-              Hi, I&apos;m{" "}
-              <span className="text-teal-500">Shivi Mittal</span>
+              Hi, I&apos;m <span className="text-teal-500">Shivi Mittal</span>
             </h1>
             <p className="text-xl lg:text-2xl text-teal-600 dark:text-teal-400 font-medium mb-4">
-              Senior Frontend Engineer
+              Senior Software Engineer
             </p>
             <p className="text-lg text-zinc-600 dark:text-zinc-400 mb-6 max-w-xl mx-auto lg:mx-0">
               Building high-performance web experiences for{" "}
@@ -24,7 +23,7 @@ export default function Hero() {
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8 text-sm">
               <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
-                6+ Years Experience
+                7+ Years Experience
               </span>
               <span className="px-4 py-1.5 bg-zinc-100 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 rounded-full ring-1 ring-zinc-900/5 dark:ring-white/10">
                 MNCs
@@ -58,7 +57,7 @@ export default function Hero() {
             <div className="relative">
               <Image
                 src="/images/hero_Image.webp"
-                alt="Shivi Mittal - Senior Frontend Engineer"
+                alt="Shivi Mittal - Senior Software Engineer"
                 width={450}
                 height={450}
                 className="rounded-2xl shadow-xl ring-1 ring-zinc-900/5 dark:ring-white/10"

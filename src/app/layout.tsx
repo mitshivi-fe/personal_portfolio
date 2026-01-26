@@ -15,11 +15,17 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Shivi Mittal | Senior Frontend Engineer",
+  title: "Shivi Mittal | Senior Software Engineer",
   description:
-    "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies. Available for mentorship, consulting, and collaboration.",
+    "Senior Software Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies. Available for mentorship, consulting, and collaboration.",
   keywords: [
     "Frontend Engineer",
+    "Fullstack Engineer",
+    "Senior Fullstack Engineer",
+    "Software Engineer",
+    "Senior Software Engineer",
+    "Senior Frontend Engineer",
+    "React.js",
     "React Developer",
     "Next.js",
     "TypeScript",
@@ -28,17 +34,17 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Shivi Mittal" }],
   openGraph: {
-    title: "Shivi Mittal | Senior Frontend Engineer",
+    title: "Shivi Mittal | Senior Software Engineer",
     description:
-      "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
+      "Senior Software Engineer with 7+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shivi Mittal | Senior Frontend Engineer",
+    title: "Shivi Mittal | Senior Software Engineer",
     description:
-      "Senior Frontend Engineer with 6+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
+      "Senior Software Engineer with 7+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
   },
   robots: {
     index: true,
