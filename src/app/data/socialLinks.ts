@@ -17,13 +17,14 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: "Email",
-    href: "mailto:mitshivi@gmail.com",
+    href: "mailto:sm3091@jbs.cam.ac.uk",
     icon: "email",
   },
 ];
 
 export const contactInfo = {
-  email: "mitshivi@gmail.com",
+  email: "sm3091@jbs.cam.ac.uk",
   linkedIn: "https://www.linkedin.com/in/shivi-mittal-nitkkr/",
   github: "https://github.com/shivimittal",
+  website: "https://mitshivi.in",
 };

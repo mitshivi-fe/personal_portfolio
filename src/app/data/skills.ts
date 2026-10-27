@@ -1,19 +1,46 @@
 export interface SkillCategory {
   name: string;
+  icon: string;
   skills: string[];
 }
 
 export const skillCategories: SkillCategory[] = [
   {
-    name: "Core Technologies",
-    skills: ["JavaScript", "TypeScript", "HTML5", "CSS3"],
+    name: "AI & Emerging Tech",
+    icon: "🤖",
+    skills: [
+      "Agentic AI",
+      "LLM Integration",
+      "LangGraph",
+      "OpenAI / Gemini / Claude APIs",
+      "APM & Observability",
+    ],
   },
   {
-    name: "Frameworks",
-    skills: ["React", "Next.js", "Angular 13+", "React Server Components"],
+    name: "Architecture & System Design",
+    icon: "🏗️",
+    skills: [
+      "System Design (HLD & LLD)",
+      "Technical Architecture",
+      "Micro-Frontends",
+      "Scalable Distributed Systems",
+    ],
   },
   {
-    name: "UI Libraries",
+    name: "Frontend Frameworks",
+    icon: "⚛️",
+    skills: [
+      "React",
+      "Next.js",
+      "Angular 13+",
+      "React Server Components",
+      "TypeScript",
+      "JavaScript",
+    ],
+  },
+  {
+    name: "UI & Styling",
+    icon: "🎨",
     skills: [
       "Tailwind CSS",
       "Material UI",
@@ -24,15 +51,29 @@ export const skillCategories: SkillCategory[] = [
     ],
   },
   {
-    name: "State Management",
-    skills: ["Redux", "Zustand", "Ngrx", "Ngxs"],
+    name: "State & Data",
+    icon: "🔄",
+    skills: ["Redux", "Zustand", "GraphQL", "React Query", "Ngrx", "Ngxs"],
   },
   {
-    name: "Testing",
-    skills: ["Jest", "React Testing Library", "Jasmine", "Karma"],
+    name: "Languages & Tools",
+    icon: "🛠️",
+    skills: ["TypeScript", "JavaScript", "Python", "HTML5", "CSS3", "Git"],
   },
   {
-    name: "Other",
-    skills: ["GraphQL", "React Query", "Micro-frontends", "Git"],
+    name: "Testing & Quality",
+    icon: "✅",
+    skills: ["Jest", "React Testing Library", "Vitest", "Jasmine", "Karma"],
+  },
+  {
+    name: "Leadership & Strategy",
+    icon: "🚀",
+    skills: [
+      "Technical Roadmapping",
+      "Team Leadership",
+      "Startup Advisory (0→1)",
+      "Product Strategy",
+      "Women in Tech Mentorship",
+    ],
   },
 ];
