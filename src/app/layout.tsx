@@ -46,6 +46,13 @@ export const metadata: Metadata = {
     description:
       "Senior Software Engineer with 7+ years of experience in React.js, Next.js, TypeScript, and modern web technologies.",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", sizes: "192x192", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   robots: {
     index: true,
     follow: true,
